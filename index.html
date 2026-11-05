@@ -3,518 +3,283 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
-  <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
-  <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
+  <title>ADT: All-Atom Diffusion Tokenizer for 3D Molecular Structures</title>
+  <meta name="description" content="Compact structural tokens for small molecules and proteins, with conditional diffusion decoding for all-atom reconstruction and autoregressive 3D generation.">
+  <meta name="author" content="Xuantuo Huang, Encheng Su, Aoran Wang, Pan Tan, Shengyong Xu, Yizhou Wang, Chen Tang, Shixiang Tang, Mingxiao Li">
+  <meta name="keywords" content="molecular tokenization, all-atom proteins, diffusion models, autoregressive generation, 3D molecular structures">
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
-
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
+  <meta property="og:title" content="ADT: All-Atom Diffusion Tokenizer for 3D Molecular Structures">
+  <meta property="og:description" content="Compact structural tokens for small molecules and proteins, with conditional diffusion decoding for all-atom reconstruction and autoregressive 3D generation.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ADT: All-Atom Diffusion Tokenizer for 3D Molecular Structures">
+  <meta name="twitter:description" content="Compact structural tokens for small molecules and proteins, with conditional diffusion decoding for all-atom reconstruction and autoregressive 3D generation.">
+  <meta name="citation_title" content="ADT: All-Atom Diffusion Tokenizer for 3D Molecular Structures">
+  <meta name="citation_author" content="Xuantuo Huang">
+  <meta name="citation_author" content="Encheng Su">
+  <meta name="citation_author" content="Aoran Wang">
+  <meta name="citation_author" content="Pan Tan">
+  <meta name="citation_author" content="Shengyong Xu">
+  <meta name="citation_author" content="Yizhou Wang">
+  <meta name="citation_author" content="Chen Tang">
+  <meta name="citation_author" content="Shixiang Tang">
+  <meta name="citation_author" content="Mingxiao Li">
+  <meta name="citation_publication_date" content="2026/10/16">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2610.23265">
   <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
-  
-  <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
-  <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
-  <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  </noscript>
-  
-  <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
-    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "FIRST_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "SECOND_AUTHOR_NAME",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "INSTITUTION_NAME"
-        }
-      }
-    ],
-    "datePublished": "2024-01-01",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONFERENCE_OR_JOURNAL_NAME"
-    },
-    "url": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
-    "abstract": "FULL_ABSTRACT_TEXT_HERE",
-    "citation": "BIBTEX_CITATION_HERE",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "RESEARCH_AREA_1"
-      },
-      {
-        "@type": "Thing", 
-        "name": "RESEARCH_AREA_2"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "INSTITUTION_OR_LAB_NAME",
-    "url": "https://YOUR_INSTITUTION_WEBSITE.com",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "sameAs": [
-      "https://twitter.com/YOUR_TWITTER_HANDLE",
-      "https://github.com/YOUR_GITHUB_USERNAME"
-    ]
-  }
-  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "ADT: All-Atom Diffusion Tokenizer for 3D Molecular Structures", "description": "Compact structural tokens for small molecules and proteins, with conditional diffusion decoding for all-atom reconstruction and autoregressive 3D generation.", "author": [{"@type": "Person", "name": "Xuantuo Huang"}, {"@type": "Person", "name": "Encheng Su"}, {"@type": "Person", "name": "Aoran Wang"}, {"@type": "Person", "name": "Pan Tan"}, {"@type": "Person", "name": "Shengyong Xu"}, {"@type": "Person", "name": "Yizhou Wang"}, {"@type": "Person", "name": "Chen Tang"}, {"@type": "Person", "name": "Shixiang Tang"}, {"@type": "Person", "name": "Mingxiao Li"}], "datePublished": "2026-10-16", "url": "https://arxiv.org/abs/2610.23265", "abstract": "Discrete structural tokenization provides a promising route to autoregressive 3D molecular generation. Yet, existing tokenizers face a trade-off between compact representation and all-atom reconstruction: atom-level tokens preserve atomic details but produce long sequences, while compact residue-level protein tokens typically omit side-chain geometry. To overcome this limitation, we propose All-atom Diffusion Tokenizer (ADT), which decouples token granularity from reconstruction resolution. ADT uses one structural token per atom for small molecules and one token per protein residue that jointly represents backbone and side-chain geometry. To mitigate geometric distortion introduced by quantization, we leverage the generative capacity of diffusion models to recover fine-grained atomic geometry beyond deterministic decoding from discrete tokens. Extensive experiments across small molecules and proteins demonstrate that ADT achieves strong reconstruction from compact discrete representations while enabling high-quality autoregressive generation of both small molecules and all-atom protein structures. These results establish compact structural tokens as an effective discrete interface for all-atom molecular reconstruction and generation.", "isAccessibleForFree": true}</script>
 </head>
 <body>
-
-
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- More Works Dropdown -->
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
-        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
-          <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
-            <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
-            <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
-            <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <!-- TODO: Add more related works or remove extra items -->
-        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="section-nav" aria-label="Page sections">
+    <a class="nav-brand" href="#top">ADT</a>
+    <div><a href="#highlights">Highlights</a><a href="#overview">Overview</a><a href="#results">Results</a><a href="#video">Video</a><a href="#BibTeX">BibTeX</a></div>
+  </nav>
   <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+    <section class="hero" id="top">
+      <div class="hero-body">
+        <div class="container is-max-desktop has-text-centered">
+          <h1 class="title is-1 publication-title">ADT: All-Atom Diffusion Tokenizer for 3D Molecular Structures</h1>
             <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
-
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+              <span class="author-block">Xuantuo Huang<sup>1</sup>,</span>
+              <span class="author-block">Encheng Su<sup>2</sup>,</span>
+              <span class="author-block">Aoran Wang<sup>3</sup>,</span>
+              <span class="author-block">Pan Tan<sup>3</sup>,</span>
+              <span class="author-block">Shengyong Xu<sup>1</sup>,</span>
+              <span class="author-block">Yizhou Wang<sup>4</sup>,</span>
+              <span class="author-block">Chen Tang<sup>4</sup>,</span>
+              <span class="author-block">Shixiang Tang<sup>4&dagger;</sup>,</span>
+              <span class="author-block">Mingxiao Li<sup>3&dagger;</sup></span>
             </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Peking University</span>
+              <span class="author-block"><sup>2</sup>University of Science and Technology of China</span>
+              <span class="author-block"><sup>3</sup>Shanghai AI Laboratory</span>
+              <span class="author-block"><sup>4</sup>The Chinese University of Hong Kong</span>
+              <!-- <span class="eql-cntrb"><small><br><sup>&dagger;</sup>Corresponding authors</small></span> -->
+            </div>
+
+
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2610.23265" target="_blank" rel="noopener noreferrer"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon" aria-hidden="true"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <!-- TODO: Replace with your GitHub repository URL -->
+            <span class="link-block">
+              <a href="https://github.com/YOUR REPO HERE" target="_blank" rel="noopener noreferrer"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon" aria-hidden="true"><i class="fab fa-github"></i></span>
+                <span>Code coming soon</span>
+              </a>
+            </span>
           </div>
+
+          <!-- <p class="hero-takeaway">One structural token per atom or residue.<br><strong>All-atom geometry through diffusion.</strong></p> -->
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+
+        <section class="section section-tint" id="video">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Video</h2>
+        <p class="section-intro">Visual introduction to all-atom diffusion tokenization.</p>
+        <video class="adt-video" controls playsinline preload="metadata" poster="static/images/video-poster.jpg" aria-label="ADT visual introduction">
+          <source src="static/videos/ADT-final.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="static/videos/ADT-final.mp4">Download the ADT video</a>.
+        </video>
+        <!-- <p class="source-note has-text-centered"><a href="static/videos/ADT-final.mp4" download>Download video (MP4)</a></p> -->
+      </div>
+    </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
+    <section class="section section-tint" id="highlights">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Highlights</h2>
+        <div class="highlight-grid">
+          <article><span class="item-number">01</span><h3>One token per chemical unit</h3><p>A common tokenization formulation uses one structural token per small-molecule atom or protein residue, with an 8,192-entry codebook.</p></article>
+          <article><span class="item-number">02</span><h3>Diffusion recovers atomic detail</h3><p>A conditional, coarse-to-fine decoder expands residue features into atom-level representations and reconstructs full 3D geometry.</p></article>
+          <article><span class="item-number">03</span><h3>Ready for autoregressive generation</h3><p>Discrete chemical and structural sequences support small-molecule generation and sequence-conditioned all-atom protein generation.</p></article>
         </div>
+        <div class="metric-strip">
+          <div><strong>28.2%<span>↓</span></strong><p>QM9 reconstruction RMSD<br>relative to CoordToken</p></div>
+          <div><strong>1.3157 <span>Å</span></strong><p>CASP14 all-atom RMSD<br>with one token per residue</p></div>
+          <div><strong>0.94</strong><p>QM9 generation<br>PoseBusters validity</p></div>
+        </div>
+        <p class="source-note has-text-centered">Reported in Tables 1, 3 and 4 of the paper. Evaluation settings are detailed below.</p>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+    </section>
 
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+    <section class="section" id="abstract">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <div class="paper-prose"><p>Discrete structural tokenization provides a promising route to autoregressive 3D molecular generation. Yet, existing tokenizers face a trade-off between compact representation and all-atom reconstruction: atom-level tokens preserve atomic details but produce long sequences, while compact residue-level protein tokens typically omit side-chain geometry. To overcome this limitation, we propose All-atom Diffusion Tokenizer (ADT), which decouples token granularity from reconstruction resolution. ADT uses one structural token per atom for small molecules and one token per protein residue that jointly represents backbone and side-chain geometry. To mitigate geometric distortion introduced by quantization, we leverage the generative capacity of diffusion models to recover fine-grained atomic geometry beyond deterministic decoding from discrete tokens. Extensive experiments across small molecules and proteins demonstrate that ADT achieves strong reconstruction from compact discrete representations while enabling high-quality autoregressive generation of both small molecules and all-atom protein structures. These results establish compact structural tokens as an effective discrete interface for all-atom molecular reconstruction and generation.</p></div>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
+    </section>
+
+    <section class="section teaser-section" aria-label="The ADT concept">
+      <div class="container is-max-desktop">
+        <figure class="research-figure">
+          <a href="static/images/technical.png" class="figure-link" data-lightbox aria-label="Enlarge the tokenization comparison figure"><img src="static/images/technical.png" width="1929" height="889" alt="Atom-level tokens retain atomic detail at the cost of long sequences; backbone-only tokens omit side chains. ADT jointly encodes backbone and side chains into one token per residue and reconstructs all atoms with diffusion." fetchpriority="high"></a>
+          <figcaption><strong>Compact tokens, all-atom structures.</strong> ADT decouples token granularity from reconstruction resolution: each protein residue has one structural token that jointly represents backbone and side-chain geometry.</figcaption>
+        </figure>
       </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
+    </section>
+    
 
+    <section class="section section-tint" id="overview">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Overview</h2>
+        <p class="section-intro">From all-atom coordinates to discrete structural tokens, and back to 3D.</p>
+        <figure class="research-figure">
+          <a href="static/images/teaser.png" class="figure-link" data-lightbox aria-label="Enlarge the ADT method overview"><img src="static/images/teaser.png" width="3043" height="1631" alt="ADT pipeline: all-atom input, chemical-unit encoding, finite scalar quantization, conditional diffusion reconstruction, and autoregressive chemical and structural token generation." loading="lazy"></a>
+          <figcaption><strong>ADT architecture.</strong> Chemical identities C and discrete structural tokens S condition a diffusion decoder. For proteins, residue-to-atom expansion recovers fine-grained backbone and side-chain coordinates.</figcaption>
+        </figure>
+        <ol class="method-steps">
+          <li><h3>Encode &amp; quantize</h3><p>A Transformer encodes chemical identities and atomic geometry. Binary finite scalar quantization (FSQ) maps each chemical unit to one discrete structural token.</p></li>
+          <li><h3>Reconstruct with diffusion</h3><p>Conditioned on chemical and structural tokens, the decoder denoises coordinates. Coarse residue features expand into atom-wise features for detailed protein reconstruction.</p></li>
+          <li><h3>Generate in token space</h3><p>An autoregressive model samples chemical identities, then structural tokens conditioned on the full chemical sequence. For sequence-conditioned proteins, identities are fixed.</p></li>
+        </ol>
+      </div>
+    </section>
 
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <section class="section" id="results">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Results</h2>
+        <p class="section-intro">Reconstruction and generation across small molecules and all-atom proteins.</p>
+        <figure class="research-figure qualitative-figure">
+          <a href="static/images/qualitative.png" class="figure-link" data-lightbox aria-label="Enlarge the molecular structure examples"><img src="static/images/qualitative.png" width="5784" height="875" alt="Examples of small-molecule structures shown as ball-and-stick models and protein structures shown as ribbon models." loading="lazy"></a>
+          <figcaption>Small-molecule and protein structure examples. Protein ribbons visualize the overall fold; ADT decodes atom-level coordinates. Select any figure to view it at a larger size.</figcaption>
+        </figure>
+        <div class="results-tabs" role="tablist" aria-label="Result categories" hidden>
+          <button id="tab-small" role="tab" aria-controls="result-small" aria-selected="true" tabindex="0">Small-molecule reconstruction</button>
+          <button id="tab-protein" role="tab" aria-controls="result-protein" aria-selected="false" tabindex="-1">Protein reconstruction</button>
+          <button id="tab-generation" role="tab" aria-controls="result-generation" aria-selected="false" tabindex="-1">Generation</button>
+        </div>
+        <!-- <div id="result-small" class="result-panel">
+          <h3 class="result-title">Accurate reconstruction from discrete tokens</h3>
+          <p>On QM9, ADT achieves 99.7% structure match and 0.0343 Å RMSD. Across the three ∇²DFT splits, it reduces RMSD by 23.8–25.6% relative to CoordToken while maintaining 100% validity.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="QM9 reconstruction table">
+            <table class="results-table"><caption>QM9 reconstruction · Table 1</caption>
+              <thead><tr><th scope="col">Representation</th><th scope="col">Method</th><th scope="col">Match (%) ↑</th><th scope="col">RMSD (Å) ↓</th></tr></thead>
+              <tbody>
+                <tr><td>Continuous</td><th scope="row">GeoLDM</th><td>87.2</td><td>0.1820</td></tr>
+                <tr><td>Continuous</td><th scope="row">ADiT</th><td>94.6</td><td>0.0890</td></tr>
+                <tr><td>Continuous</td><th scope="row">SinAE</th><td>100.0</td><td>0.0007</td></tr>
+                <tr><td>Discrete</td><th scope="row">Mol-StrucTok</th><td>90.7</td><td>0.1280</td></tr>
+                <tr><td>Discrete</td><th scope="row">CoordToken</th><td>99.4</td><td>0.0478</td></tr>
+                <tr class="ours"><td>Discrete</td><th scope="row">ADT (Ours)</th><td>99.7</td><td>0.0343</td></tr>
+              </tbody>
+            </table>
           </div>
-        </div>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="DFT reconstruction table">
+            <table class="results-table"><caption>∇²DFT reconstruction · Table 2</caption>
+              <thead><tr><th scope="col">Method</th><th scope="col">Conformer RMSD ↓</th><th scope="col">Structure RMSD ↓</th><th scope="col">Scaffolds RMSD ↓</th><th scope="col">Validity (%) ↑<br><small>all three splits</small></th></tr></thead>
+              <tbody>
+                <tr><th scope="row">mol2token</th><td>0.2010</td><td>0.2010</td><td>0.2010</td><td>47.1</td></tr>
+                <tr><th scope="row">CoordToken</th><td>0.0671</td><td>0.0673</td><td>0.0671</td><td>100.0</td></tr>
+                <tr class="ours"><th scope="row">ADT (Ours)</th><td>0.0499</td><td>0.0512</td><td>0.0511</td><td>100.0</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="source-note">RMSD is reported in Å. ↑ Higher is better; ↓ lower is better. ADT improves over the evaluated discrete tokenizers; continuous SinAE achieves the lowest QM9 reconstruction RMSD.</p>
+        </div> -->
+        <!-- <div id="result-protein" class="result-panel">
+          <h3 class="result-title">One residue token, full atomic geometry</h3>
+          <p>ADT jointly reconstructs backbone and side chains. Compared with DPLM-2 followed by all-atom completion, it improves all-atom RMSD, all-atom lDDT and TM-score on both CASP14 and CASP15.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Protein reconstruction table">
+            <table class="results-table"><caption>Protein reconstruction · Selected metrics from Table 3</caption>
+              <thead><tr><th scope="col">Dataset</th><th scope="col">Method</th><th scope="col">AA RMSD (Å) ↓</th><th scope="col">AA lDDT ↑</th><th scope="col">TM-score ↑</th></tr></thead>
+              <tbody>
+                <tr><td>CASP14</td><th scope="row">DPLM-2 + Rosetta fixbb</th><td>3.4918</td><td>0.7532</td><td>0.8859</td></tr>
+                <tr><td>CASP14</td><th scope="row">DPLM-2 + PDBFixer</th><td>3.9657</td><td>0.6632</td><td>0.8859</td></tr>
+                <tr><td>CASP14</td><th scope="row">DPLM-2 + cg2all (nofix)</th><td>3.4120</td><td>0.7710</td><td>0.8859</td></tr>
+                <tr><td>CASP14</td><th scope="row">DPLM-2 + cg2all (fixed)</th><td>3.4358</td><td>0.7611</td><td>0.8859</td></tr>
+                <tr class="ours"><td>CASP14</td><th scope="row">ADT (Ours)</th><td>1.3157</td><td>0.8223</td><td>0.9695</td></tr>
+                <tr class="dataset-start"><td>CASP15</td><th scope="row">DPLM-2 + Rosetta fixbb</th><td>4.5931</td><td>0.7671</td><td>0.8644</td></tr>
+                <tr><td>CASP15</td><th scope="row">DPLM-2 + PDBFixer</th><td>5.0213</td><td>0.6767</td><td>0.8644</td></tr>
+                <tr><td>CASP15</td><th scope="row">DPLM-2 + cg2all (nofix)</th><td>4.5037</td><td>0.7879</td><td>0.8644</td></tr>
+                <tr><td>CASP15</td><th scope="row">DPLM-2 + cg2all (fixed)</th><td>4.5288</td><td>0.7772</td><td>0.8644</td></tr>
+                <tr class="ours"><td>CASP15</td><th scope="row">ADT (Ours)</th><td>1.8261</td><td>0.8258</td><td>0.9470</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="source-note">AA = all-atom. DPLM-2 produces backbones; its variants add a separate all-atom completion step. “Fixed” preserves the input backbone during cg2all completion. See Table 3 for backbone and GDT metrics.</p>
+        </div> -->
+        <!-- <div id="result-generation" class="result-panel">
+          <h3 class="result-title">Autoregressive generation of 3D structures</h3>
+          <p>ADT supports unconditional small-molecule generation on QM9 and amino-acid-sequence-conditioned protein generation on CAMEO22.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="QM9 generation table">
+            <table class="results-table"><caption>QM9 unconditional generation · Table 4</caption>
+              <thead><tr><th scope="col">Representation</th><th scope="col">Method</th><th scope="col">Valid ↑</th><th scope="col">Unique ↑</th><th scope="col">Diversity ↑</th><th scope="col">PB Valid ↑</th></tr></thead>
+              <tbody>
+                <tr><td>Continuous</td><th scope="row">EQGAT-diff</th><td>0.99</td><td>1.00</td><td>0.89</td><td>0.94</td></tr>
+                <tr><td>Continuous</td><th scope="row">SemlaFlow</th><td>0.99</td><td>0.95</td><td>0.89</td><td>0.94</td></tr>
+                <tr><td>Continuous</td><th scope="row">FlowMol</th><td>0.97</td><td>0.97</td><td>0.92</td><td>0.94</td></tr>
+                <tr><td>Continuous</td><th scope="row">ADiT</th><td>0.97</td><td>0.97</td><td>0.90</td><td>0.92</td></tr>
+                <tr><td>Continuous</td><th scope="row">SinAE</th><td>0.97</td><td>0.97</td><td>0.91</td><td>0.94</td></tr>
+                <tr><td>Discrete</td><th scope="row">Mol-StrucTok</th><td>0.97</td><td>0.85</td><td>0.87</td><td>0.88</td></tr>
+                <tr><td>Discrete</td><th scope="row">CoordToken</th><td>0.95</td><td>0.93</td><td>0.90</td><td>0.86</td></tr>
+                <tr class="ours"><td>Discrete</td><th scope="row">ADT (Ours)</th><td>1.00</td><td>0.96</td><td>0.91</td><td>0.94</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="source-note">PB Valid = PoseBusters validity. Values follow the paper's 0–1 reporting scale.</p>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="CAMEO22 protein generation table">
+            <table class="results-table"><caption>CAMEO22 sequence-conditioned generation · Table 5</caption>
+              <thead><tr><th scope="col">Method</th><th scope="col">Length match ↑</th><th scope="col">Cα-lDDT ↑</th><th scope="col">BB-lDDT ↑</th><th scope="col">TM-score ↑</th><th scope="col">AA-lDDT ↑</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">DPLM-2</th><td>1.0</td><td>0.5607</td><td>0.5683</td><td>0.633</td><td>—</td></tr>
+                <tr><th scope="row">+ Rosetta fixbb</th><td>1.0</td><td>0.5607</td><td>0.5683</td><td>0.633</td><td>0.482</td></tr>
+                <tr><th scope="row">+ PDBFixer</th><td>1.0</td><td>0.5607</td><td>0.5683</td><td>0.633</td><td>0.372</td></tr>
+                <tr><th scope="row">+ cg2all (nofix)</th><td>1.0</td><td>0.5607</td><td>0.5683</td><td>0.633</td><td>0.503</td></tr>
+                <tr><th scope="row">+ cg2all (fixed)</th><td>1.0</td><td>0.5607</td><td>0.5683</td><td>0.633</td><td>0.496</td></tr>
+                <tr class="ours"><th scope="row">ADT (Ours)</th><td>1.0</td><td>0.5740</td><td>0.5801</td><td>0.665</td><td>0.543</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="source-note">Evaluated on 183 CAMEO22 targets with the same Qwen3.5-0.8B autoregressive backbone for both tokenizers. BB = backbone; AA = all-atom. ADT directly decodes all-atom coordinates.</p>
+        </div> -->
+        <p class="paper-reference">
+          For quantitative results, see
+          <a href="ADT.pdf#page=6" target="_blank" rel="noopener noreferrer">
+            Sections 5.2–5.3 and Tables 1–5 of the paper ↗
+          </a>.
+        </p>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
+    </section>
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop">
+        <div class="bibtex-header"><h2 class="title is-3">BibTeX</h2><button class="copy-bibtex-btn" type="button"><span class="copy-text" aria-live="polite">Copy</span></button></div>
+        <pre id="bibtex-code"><code>@article{huang2026adt,
+  title={ADT: All-Atom Diffusion Tokenizer for 3D Molecular Structures},
+  author={Huang, Xuantuo and Su, Encheng and Wang, Aoran and Tan, Pan and
+          Xu, Shengyong and Wang, Yizhou and Tang, Chen and Tang, Shixiang and Li, Mingxiao},
+  journal={arXiv preprint arXiv:2610.23265},
+  year={2026},
+  doi={10.48550/arXiv.2610.23265},
+  url={https://arxiv.org/abs/2610.23265}
 }</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
       </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container is-max-desktop content has-text-centered">
+      <p>This page uses the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener noreferrer">Academic Project Page Template</a>, adapted from <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a>.<br>Website template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.</p>
     </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+  </footer>
+  <button class="scroll-to-top" type="button" title="Scroll to top" aria-label="Scroll to top">↑</button>
+  <dialog id="figure-dialog" aria-label="Enlarged research figure"><button class="figure-close" type="button" aria-label="Close enlarged figure">Close ×</button><img alt=""></dialog>
+</body>
+</html>
